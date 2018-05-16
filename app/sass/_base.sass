@@ -1,0 +1,528 @@
+//----------------------color---------------------
+$accent: #212121
+$red: #f2634b
+
+//----------------------color---------------------
+
+::placeholder
+	color: $accent
+
+::selection
+	background-color: $accent
+	color: #fff
+
+html, body
+	height: 100%
+
+body
+	overflow-x: hidden
+	position: relative
+	min-width: 400px
+	line-height: 1.65
+	font-family: 'Montserrat', sans-serif
+	font-size: 14px
+	color: $accent
+
+h1, h2, h3, h4, h5 ,h6
+	font-weight: 400
+	line-height: 1.4
+	margin: 0
+	padding: 0
+
+h1
+	font-size: 48px
+	text-align: center
+	margin-bottom: 50px
+
+h2
+	font-size: 36px
+	text-align: center
+	margin-bottom: 50px
+
+h3
+	font-size: 36px
+	line-height: 1.2
+
+h4
+	font-size: 18px
+	font-weight: 700
+
+h5
+	font-size: 36px
+	color: #3b3b3b
+
+h6
+	font-size: 16px
+	font-weight: 600
+
+ul
+	margin: 0
+	padding: 0
+	list-style-type: none
+
+time
+	color: #808080
+	font-size: 12px
+	font-weight: 500
+	padding-left: 25px
+	position: relative
+	&::before
+		content: url(../img/icon/time.svg)
+		position: absolute
+		left: 0
+		top: 0
+		width: 15px
+		height: 15px
+
+nav
+	ul
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+
+	li
+		margin-right: 40px
+		&:last-child
+			margin-right: 0
+	
+		a
+			position: relative
+			display: block
+			font-size: 16px
+			color: #fff
+			z-index: 1
+			&::before
+				content: ''
+				width: 0
+				transform: scale(0)
+				transition: all .3s
+				position: absolute
+				bottom: 0
+				width: 100%
+				height: 1px
+				background-color: #fafafa
+				z-index: -1
+
+			&:hover
+				color: #fafafa
+				text-decoration: none
+				&::before
+					transform: scale(1)
+
+			&:focus
+				color: #fafafa
+				text-decoration: none
+				&::before
+					transform: scale(1)
+
+//-----------------------------------------------------swiper-------------------------------------
+.swiper-pagination-bullet
+	background-color: rgba($red, .5)
+	opacity: 1
+	
+.swiper-pagination-bullet-active
+	background-color: $red
+//-----------------------------------------------------end-swiper-------------------------------------
+
+input, textarea
+	border: #666 1px solid
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+b, strong
+	font-weight: 700
+
+p
+	margin: 0
+	padding: 0
+a,
+a:focus,
+a:hover
+	outline: none
+
+input
+	box-shadow: none
+	-webkit-appearance: none
+	color: #7e8187
+	font-size: 18px
+	&::placeholder
+		color: #7e8187
+		font-size: 18px
+	&:hover
+		outline: none
+		box-shadow: none
+		-webkit-appearance: none
+	&:focus
+		outline: none
+		box-shadow: none
+		-webkit-appearance: none
+
+textarea
+	resize: none
+	outline: none
+	box-shadow: none
+	-webkit-appearance: none
+	border: none
+	&:hover
+		box-shadow: none
+		outline: none
+		-webkit-appearance: none
+	&:focus
+		outline: none
+		box-shadow: none
+		-webkit-appearance: none
+
+body input:focus:required:invalid, body textarea:focus:required:invalid
+	border: 1px solid #cccccc
+
+body input:required:valid, body textarea:required:valid
+	border: 1px solid #cccccc
+
+.preloader
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	z-index: 9999
+	background-color: #fff
+
+.pulse
+	position: relative
+	left: 50%
+	top: 50vh
+	margin: -40px 0 0 -40px
+
+.pulse::before, .pulse::after
+	content: ''
+	border: 5px solid #721bb6
+	height: 80px
+	width: 80px
+	border-radius: 50%
+	position: absolute
+
+.pulse::before
+	animation: pulse-outer .8s ease-in infinite
+
+.pulse::after
+	animation: pulse-inner .8s ease-in infinite
+
+
+@keyframes pulse-outer
+		0%
+			opacity: .1
+		
+		50%
+			opacity: .5
+		
+		100%
+			opacity: 0
+
+
+@keyframes pulse-inner
+		0%
+			opacity: 1
+			transform: scale(0)
+		
+		100%
+			opacity: 0
+			transform: scale(1)
+
+.btn
+	position: relative
+	display: inline-block
+	border: none
+	outline: none
+	font-size: 14px
+	font-weight: 500
+	text-align: center
+	line-height: 1
+	color: #fff
+	padding: 10px 55px 10px 35px
+	letter-spacing: 0.13px
+	border-radius: 5px
+	background-color: #f2634b
+
+	&:hover
+		outline: none
+		border: none
+		color: #fff
+		text-decoration: none
+		cursor: pointer
+
+	&:focus
+		outline: none
+		border: none
+		color: #fff
+		text-decoration: none
+		cursor: pointer
+
+	&::before
+		content: url(../img/icon/right-arrow.svg)
+		position: absolute
+		right: 35px
+		width: 13px
+		height: 10px
+		animation: btn-back .3s linear 1 forwards
+
+	&:hover
+		&::before
+			animation: btn .3s linear 1 forwards
+
+.form
+	position: relative
+	display: flex
+	flex-direction: row
+	justify-content: space-between
+	padding: 45px 50px 25px 50px
+
+	h3
+		color: #212121
+		font-size: 24px
+		font-weight: 400
+		line-height: 21px
+		&::after
+			content: ''
+			display: block
+			margin: 15px auto 5px auto
+			box-shadow: 0 8px 10px rgba(251, 131, 85, 0.15)
+			background-color: #ffff00
+			background: linear-gradient(to right, #f5574b 0%, #ffa05c 100%)
+			width: 70px
+			height: 1px
+
+	b
+		color: #063346
+		font-size: 16px
+
+	i
+		margin-left: 20px
+		margin-right: 10px
+
+	&_btn
+		width: 390px
+		height: 80px
+		border-radius: 40px
+
+	p
+		color: #808080
+		font-size: 12px
+		font-weight: 400
+		line-height: 21px
+		margin-bottom: 25px
+
+	input
+		width: 390px
+		height: 80px
+		background-color: #fff
+		color: #212121
+		font-size: 14px
+		font-weight: 400
+		line-height: 1
+		padding: 10px 20px
+		width: 100%
+		border-radius: 40px
+		border: 1px solid #c7c7c7
+		background-color: #f6f6f6
+		text-align: center
+		margin-bottom: 25px
+
+	&-group
+		margin: 0 auto
+		position: relative
+		text-align: center
+
+		label
+			position: absolute
+			left: 0
+			right: 0
+			bottom: -10px
+			color: red
+			transition: all .3s
+	
+	&__btn
+		margin-top: 25px
+
+	.hamburger
+		padding: 0
+
+	.is-active
+		right: 10px
+		top: 10px
+		position: absolute
+		.hamburger-inner,
+		.hamburger-inner:after,
+		.hamburger-inner:before
+			background-color: #000
+			height: 2px
+
+		&:focus
+			outline: none
+
+	.hamburger-box
+		width: 20px
+		height: 20px
+
+	.hamburger-box
+		width: 32px
+		right: 0
+
+	.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
+		width: 24px
+		height: 3px
+		right: 0
+
+.modal
+	position: relative
+	width: 320px
+	height: auto
+	top: auto
+	padding: 40px
+	border-radius: 10px
+	background-color: #fff
+	text-align: center
+
+	h2
+		text-align: center
+		color: #041830
+		margin-bottom: 15px
+
+	p
+		text-align: center
+		margin-bottom: 20px
+		color: #7e8187
+
+	input
+		width: 390px
+		height: 60px
+		background-color: #fff
+		color: #212121
+		font-size: 14px
+		font-weight: 400
+		line-height: 1
+		padding: 10px 20px
+		width: 100%
+		border-radius: 40px
+		border: 1px solid #c7c7c7
+		background-color: #f6f6f6
+		text-align: center
+		margin-bottom: 30px
+	
+	.btn
+		height: 60px
+		font-size: 14px
+		padding: 18px 15px
+		width: 100%
+
+	.hamburger
+		position: absolute
+		right: 10px
+		top: 20px
+		display: block
+
+		.hamburger-box
+			width: 30px
+			right: 0
+
+		.hamburger-inner,
+		.hamburger-inner:after,
+		.hamburger-inner:before
+			background-color: $accent
+			width: 30px
+			height: 4px
+			right: 0
+
+
+//----sass стилі гамбургера---------
+
+
+.hamburger
+	display: none
+	position: absolute
+	transition: all .4s linear
+	right: 15px
+	padding: 0
+	&:focus
+		outline: none
+
+	.hamburger-box
+		width: 40px
+		right: 0
+
+	.hamburger-inner,
+	.hamburger-inner:after,
+	.hamburger-inner:before
+		background-color: #fff
+		width: 40px
+		height: 4px
+		right: 0
+
+
+	.is-active
+		position: fixed
+		z-index: 1001
+
+
+//----------------------img-----------------------------------
+
+@keyframes img
+		0%
+			transform: scale(1)
+		
+		100%
+			transform: scale(1.1)
+
+@keyframes img-back
+		0%
+			transform: scale(1.1)
+		
+		100%
+			transform: scale(1)
+
+//-------------------------opacity----------------------------------
+@keyframes opacity
+		0%
+			opacity: 0
+		
+		100%
+			opacity: 1
+
+@keyframes opacity-back
+		0%
+			opacity: 1
+		
+		100%
+			opacity: 0
+
+//-------------------------btn----------------------------------
+@keyframes btn
+		0%
+			right: 35px
+		
+		100%
+			right: 10px
+
+@keyframes btn-back
+		0%
+			right: 10px
+		
+		100%
+			right: 35x
+
+//----------------------banner-------------------------------------
+@keyframes banner
+		0%
+			transform: scale(1)
+		
+		100%
+			transform: scale(1.1)
+
+@keyframes banner-back
+		0%
+			transform: scale(1.1)
+		
+		100%
+			transform: scale(1)
