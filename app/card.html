@@ -78,7 +78,7 @@
 
 					<div class="col-md-7">
 
-						<div id="one" class="tabs__wrap swiper-container">
+						<div id="one" class="tabs__wrap card__wrap swiper-container">
 							<div class="swiper-wrapper">
 								<div class="swiper-slide tabs__wrap_item">
 									<img src="img/catalog/1.jpg" alt="tabs">
@@ -90,9 +90,12 @@
 									<img src="img/catalog/1.jpg" alt="tabs">
 								</div>
 							</div>
+							<div class="swiper-button-next"></div>
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-pagination pagination"></div>
 						</div>
 
-						<div id="two" class="tabs__wrap swiper-container">
+						<div id="two" class="tabs__wrap card__wrap swiper-container">
 							<div class="swiper-wrapper">
 								<div class="swiper-slide tabs__wrap_item">
 									<img src="img/catalog/2.jpg" alt="tabs">
@@ -104,9 +107,12 @@
 									<img src="img/catalog/2.jpg" alt="tabs">
 								</div>
 							</div>
+							<div class="swiper-button-next"></div>
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-pagination pagination"></div>
 						</div>
 
-						<div id="three" class="tabs__wrap swiper-container">
+						<div id="three" class="tabs__wrap card__wrap swiper-container">
 							<div class="swiper-wrapper">
 								<div class="swiper-slide tabs__wrap_item">
 									<img src="img/catalog/2.jpg" alt="tabs">
@@ -118,9 +124,12 @@
 									<img src="img/catalog/2.jpg" alt="tabs">
 								</div>
 							</div>
+							<div class="swiper-button-next"></div>
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-pagination pagination"></div>
 						</div>
 
-						<div id="four" class="tabs__wrap swiper-container">
+						<div id="four" class="tabs__wrap card__wrap swiper-container">
 							<div class="swiper-wrapper">
 								<div class="swiper-slide tabs__wrap_item">
 									<img src="img/catalog/2.jpg" alt="tabs">
@@ -132,6 +141,9 @@
 									<img src="img/catalog/2.jpg" alt="tabs">
 								</div>
 							</div>
+							<div class="swiper-button-next"></div>
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-pagination pagination"></div>
 						</div>
 							
 					</div>
@@ -149,10 +161,34 @@
 
 							<div class="tabs">
 								<ul>
-								  <li><a href="#one">от 150 000</a></li>
-								  <li><a href="#two">от 260 000</a></li>
-								  <li><a href="#three">от 300 000</a></li>
-								  <li><a href="#four">от 350 000</a></li>
+								  <li>
+								  	<a href="#one">
+									  	<img src="img/icon/sofa-1.svg" class="on" alt="sofa" width="50" height="50">
+									  	<img src="img/icon/sofa-1-red.svg" class="off" alt="sofa" width="50" height="50">
+									  	<span>от 150 000</span>
+									  </a>
+								  </li>
+								  <li>
+								  	<a href="#two">
+									  	<img src="img/icon/sofa-2.svg" class="on" alt="sofa" width="50" height="50">
+									  	<img src="img/icon/sofa-2-red.svg" class="off" alt="sofa" width="50" height="50">
+									 		<span>от 260 000</span>
+									 	</a>
+								 	</li>
+								  <li>
+								  	<a href="#three">
+									  	<img src="img/icon/sofa-3.svg" class="on" alt="sofa" width="50" height="50">
+									  	<img src="img/icon/sofa-3-red.svg" class="off" alt="sofa" width="50" height="50">
+									  	<span>от 300 000</span>
+									  </a>
+								  </li>
+								  <li>
+								  	<a href="#four">
+									  	<img src="img/icon/sofa-4.svg" class="on" alt="sofa" width="50" height="50">
+									  	<img src="img/icon/sofa-4-red.svg" class="off" alt="sofa" width="50" height="50">
+									  	<span>от 350 000</span>
+								  </a>
+									</li>
 								</ul>
 							</div>
 
@@ -167,11 +203,95 @@
 			</div>
 		</section>
 
-		<section class="card section__gray">
+		<section class="card card__more section__gray">
 			<div class="container">
 
 				<h2>С этим товаром покупают</h2>
-				
+
+				<div class="card__more">
+					<div class="card__more_block">
+						<h6>Carmo</h6>
+						<p>Прямой диван Carmo</p>
+						<strong>2 040,00</strong>
+						<img src="img/catalog/1.jpg" alt="more">
+					</div>
+
+					<div class="card__more_block">
+						<h6>Carmo</h6>
+						<p>Прямой диван Carmo</p>
+						<strong>2 040,00</strong>
+						<img src="img/catalog/11.jpg" alt="more">
+					</div>
+
+					<div class="card__more_block">
+						<h6>Carmo</h6>
+						<p>Прямой диван Carmo</p>
+						<strong>2 040,00</strong>
+						<img src="img/catalog/12.jpg" alt="more">
+					</div>
+
+					<div class="card__more_block">
+						<h6>Carmo</h6>
+						<p>Прямой диван Carmo</p>
+						<strong>2 040,00</strong>
+						<img src="img/catalog/11.jpg" alt="more">
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+		<section class="card card__documentation">
+
+			<div class="container">
+				<div class="card__documentation_tab">
+					<ul>
+					  <li>
+					  	<a href="#documentation-one">Информация о товаре</a>
+					  </li>
+					  <li>
+					  	<a href="#documentation-two"> Качество</a>
+					 	</li>
+					  <li>
+					  	<a href="#documentation-three">Материалы</a>
+					  </li>
+					</ul>
+				</div>
+			</div>
+
+			<hr>
+
+
+			<div id="documentation-one" class="card__documentation_wrap">
+				<div class="container">
+					
+					<div class="row">
+						<div class="col-md-4">
+							<h6>Этот компактный диван – идеальное решение для небольших помещений.</h6>
+							<p>Несмотря на компактный размер, этот двухместный диван выглядит стильно и идеально подойдет для небольшой комнаты. Простой уход – достаточно протереть губкой, смоченной водой или мягким моющим средством.</p>
+						</div>
+						<div class="col-md-4">
+							<h6>Инструкция по уходу</h6>
+							<ul>
+								<li>- Искусственная кожа</li>
+								<li>- Чистить пылесосом</li>
+								<li>- Несложные пятна можно удалить губкой, смоченной водой или слабым мыльным раствором.</li>
+								<li>- Оберегайте от воздействия прямых солнечных лучей.</li>
+							</ul>
+						</div>
+						<div class="col-md-4">
+							<h6>Размеры товара</h6>
+							<ul>
+								<li><span>Ширина:</span> <i></i> <span>144 см</span></li>
+								<li><span>Глубина:</span> <i></i> <span>79 см</span></li>
+								<li><span>Высота:</span> <i></i> <span>70 см</span></li>
+								<li><span>Высота подлокотника:</span> <i></i> <span>60 см</span></li>
+								<li><span>Ширина сиденья:</span> <i></i> <span>118 см</span></li>
+								<li><span>Высота сиденья:</span> <i></i> <span>39 см</span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 
