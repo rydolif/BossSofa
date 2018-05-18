@@ -39,7 +39,7 @@
 .logo
 	width: 240px
 	height: 65px
-	
+
 .category
 	&__list
 		display: flex
@@ -421,6 +421,16 @@
 			&::before
 				transform: scale(1)
 
+.form-container
+	h2
+		margin-bottom: 10px
+
+	h6
+		text-align: center
+		font-weight: 400
+		margin-bottom: 35px
+
+
 //----------------------------------catalog-------------------------------
 .catalog
 	&-title
@@ -595,106 +605,17 @@
 
 	b
 		font-size: 16px
-	
-	.tabs
-		li
-			position: relative
-			border-bottom: 1px solid #e6e6e6
-			padding: 15px 0
 
-			&:last-child
-				margin-bottom: 20px
-			
-		a
-			position: relative
-			color: #808080
-			font-size: 24px
-			text-decoration: none
-			display: flex
-			flex-direction: row
-			justify-content: space-between
-			padding-left: 30px
-
-			&::before
-				content: ""
-				position: absolute
-				top: 50%
-				left: 0
-				transform: translate(-50%, -50%)
-				width: 16px
-				height: 16px
-				border: 1px solid #8b8b8b
-				border-radius: 50%
-
-			&::after
-				content: ""
-				display: none
-				position: absolute
-				top: 50%
-				left: 0
-				transform: translate(-50%, -50%)
-				width: 8px
-				height: 8px
-				background-color: #d96b5a
-				border-radius: 50%
-
-
-		.off
-			display: none
-
-		.on
-			display: block
-
-		.active
-			color: #212121
-
-			&::after
-				display: block
-
-			&::before
-				border: 1px solid #d96b5a
-
-			.off
-				transition: all .3s
-				display: block
-
-			.on
-				display: none
+	hr
+		border: none
+		background-color: #e8e8e8
+		height: 1px
 
 	&__block-tab
 		padding-left: 40px
 
 		.catalog-content__currency
 			padding: 0
-
-	.tabs__wrap
-		position: relative
-		padding-bottom: 50px
-		border: 1px solid #e6e6e6
-		height: 100%
-
-
-		&_item
-			width: 100%
-			padding: 50px 90px 0 90px
-			display: flex
-			align-items: center
-
-			img
-				width: 100%
-
-		.swiper-button-next
-			right: 25px
-
-		.swiper-button-prev
-			left: 25px
-
-		.swiper-button-next,.swiper-container-rtl .swiper-button-prev
-			background-image: url(../img/icon/arrow-slider.svg)
-			transform: rotate(180deg)
-
-		.swiper-button-prev,.swiper-container-rtl .swiper-button-next
-			background-image: url(../img/icon/arrow-slider.svg)
 
 	&__more
 		display: flex
@@ -715,6 +636,7 @@
 		img
 			width: 100%
 
+
 		&_block
 			display: flex
 			flex-direction: column
@@ -722,12 +644,15 @@
 			background-color: #fff
 			padding: 25px
 			border: 1px solid #f2f2f2
-	
-	hr
-		border: none
-		background-color: #e8e8e8
-		height: 1px
 
+			div
+				height: 100%
+				width: 100%
+
+				img
+					height: 100%
+					width: 100%
+	
 	&__documentation
 		&_tab
 			ul
@@ -766,8 +691,19 @@
 						&::before
 							transform: scale(1)
 
+
+				.active
+					position: relative
+					z-index: 1
+					color: $red
+					&::before
+						color: $red
+						text-decoration: none
+						transform: scale(1)
+
+
 		&_wrap
-			ul
+			padding-top: 30px
 
 			li
 				position: relative
@@ -781,8 +717,137 @@
 				i
 					width: 100%
 					border-bottom: 1px dotted $accent
+			
+		&_row
+			display: flex
+			flex-direction: row
+			justify-content: space-between
+		
+		&_block
+			width: 31%
+
+	&__scheme
+		padding-bottom: 60px
+
+		&_container
+			display: flex
+			flex-direction: row
+			justify-content: space-between
+			margin-bottom: 60px
+
+			div
+				width: auto
+
+			img
+				max-width: 100%
+
+		.btn
+			padding-left: 50px
+			padding-right: 70px
+
+	&-bad
+		.tabs
+			li
+				a
+					font-size: 18px
+
+	.tabs
+		li
+			position: relative
+			border-bottom: 1px solid #e6e6e6
+			padding: 15px 0
+
+			&:last-child
+				margin-bottom: 20px
+			
+		a
+			position: relative
+			color: #808080
+			font-size: 24px
+			text-decoration: none
+			display: flex
+			flex-direction: row
+			justify-content: space-between
+			padding-left: 30px
+			font-weight: 600
+
+			&::before
+				content: ""
+				position: absolute
+				top: 50%
+				left: 0
+				transform: translate(-50%, -50%)
+				width: 16px
+				height: 16px
+				border: 1px solid #8b8b8b
+				border-radius: 50%
+
+			&::after
+				content: ""
+				display: none
+				position: absolute
+				top: 50%
+				left: 0
+				transform: translate(-50%, -50%)
+				width: 8px
+				height: 8px
+				background-color: #d96b5a
+				border-radius: 50%
+
+			i
+				font-size: 20px
+				font-style: normal
+
+		.off
+			display: none
+
+		.on
+			display: block
+
+		.active
+			color: #212121
+
+			&::after
+				display: block
+
+			&::before
+				border: 1px solid #d96b5a
+
+			.off
+				transition: all .3s
+				display: block
+
+			.on
+				display: none
+
+	.tabs__wrap
+		position: relative
+		padding-bottom: 50px
+		border: 1px solid #e6e6e6
+		height: 100%
 
 
+		&_item
+			width: 100%
+			padding: 50px 90px 0 90px
+			display: flex
+			align-items: center
+
+			img
+				width: 100%
+
+		.swiper-button-next
+			right: 25px
+
+		.swiper-button-prev
+			left: 25px
+
+		.swiper-button-next,.swiper-container-rtl .swiper-button-prev
+			background-image: url(../img/icon/arrow-slider.svg)
+			transform: rotate(180deg)
+
+		.swiper-button-prev,.swiper-container-rtl .swiper-button-next
+			background-image: url(../img/icon/arrow-slider.svg)
 
 
 @import "media" // Always at the end

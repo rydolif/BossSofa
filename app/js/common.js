@@ -56,7 +56,7 @@ var swiper = new Swiper('.reviews__list', {
   }
 });
 
-var swiper = new Swiper('#one', {
+var swiper = new Swiper('.card__wrap', {
   slidesPerView: 1,
   spaceBetween: 30,
     pagination: {
@@ -69,45 +69,6 @@ var swiper = new Swiper('#one', {
     }
 });
 
-
-var swiper = new Swiper('#two', {
-  slidesPerView: 1,
-  spaceBetween: 30,
-    pagination: {
-      el: '.pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    }
-});
-
-var swiper = new Swiper('#three', {
-  slidesPerView: 1,
-  spaceBetween: 30,
-    pagination: {
-      el: '.pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    }
-});
-
-var swiper = new Swiper('#four', {
-  slidesPerView: 1,
-  spaceBetween: 30,
-    pagination: {
-      el: '.pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    }
-});
 //---------------------------------------card tabs----------------------------------
 $('.card__wrap').hide();
 $('.card__wrap:first').show();
@@ -124,7 +85,19 @@ $('.tabs ul a').click(function(event){
 });
 
 //---------------------------------------documentation tabs----------------------------------
+$('.card__documentation_wrap').hide();
+$('.card__documentation_wrap:first').show();
+$('.card__documentation_tab ul a:first').addClass('active');
 
+$('.card__documentation_tab ul a').click(function(event){
+  event.preventDefault();
+  $('.card__documentation_tab ul a').removeClass('active');
+  $(this).addClass('active');
+  $('.card__documentation_wrap').hide();
+
+  var selectTab = $(this).attr('href');
+  $(selectTab).fadeIn();
+});
 
 //-------------------------------попандер---------------------------------------
   $('.modal').popup({transition: 'all 0.3s'});
@@ -136,7 +109,7 @@ $('.tabs ul a').click(function(event){
 	   return this.optional(element) || phone_number.match(/\+[0-9]{1}\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}/);
 	}, "Введите Ваш телефон");
 
-  $(".consultation-form").validate({
+  $(".question").validate({
     messages: {
       name: "Введите ваше Имя",
       phone: "Введите ваш телефон",
@@ -149,11 +122,11 @@ $('.tabs ul a').click(function(event){
     },
     submitHandler: function(form) {
       var t = {
-        name: jQuery(".consultation-form").find("input[name=name]").val(),
-        phone: jQuery(".consultation-form").find("input[name=phone]").val(),
-        subject: jQuery(".consultation-form").find("input[name=subject]").val()
+        name: jQuery(".question").find("input[name=name]").val(),
+        phone: jQuery(".question").find("input[name=phone]").val(),
+        subject: jQuery(".question").find("input[name=subject]").val()
       };
-      ajaxSend('.consultation-form', t);
+      ajaxSend('.question', t);
     }
   });
 

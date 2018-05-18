@@ -3,14 +3,6 @@ $accent: #212121
 $red: #f2634b
 
 //----------------------color---------------------
-
-::placeholder
-	color: $accent
-
-::selection
-	background-color: $accent
-	color: #fff
-
 html, body
 	height: 100%
 
@@ -22,6 +14,10 @@ body
 	font-family: 'Montserrat', sans-serif
 	font-size: 14px
 	color: $accent
+
+::selection
+	background-color: $accent
+	color: #fff
 
 h1, h2, h3, h4, h5 ,h6
 	font-weight: 400
@@ -74,6 +70,10 @@ time
 		width: 15px
 		height: 15px
 
+i
+	font-style: normal
+	font-size: 16px
+	
 nav
 	ul
 		display: flex
@@ -115,15 +115,6 @@ nav
 				&::before
 					transform: scale(1)
 
-//-----------------------------------------------------swiper-------------------------------------
-.swiper-pagination-bullet
-	background-color: rgba($red, .5)
-	opacity: 1
-	
-.swiper-pagination-bullet-active
-	background-color: $red
-//-----------------------------------------------------end-swiper-------------------------------------
-
 input, textarea
 	border: #666 1px solid
 	outline: none
@@ -148,17 +139,21 @@ input
 	-webkit-appearance: none
 	color: #7e8187
 	font-size: 18px
+
 	&::placeholder
-		color: #7e8187
-		font-size: 18px
+		color: #b2b2b2
+		font-size: 14px
+
 	&:hover
 		outline: none
 		box-shadow: none
 		-webkit-appearance: none
+
 	&:focus
 		outline: none
 		box-shadow: none
 		-webkit-appearance: none
+
 
 textarea
 	resize: none
@@ -181,6 +176,7 @@ body input:focus:required:invalid, body textarea:focus:required:invalid
 body input:required:valid, body textarea:required:valid
 	border: 1px solid #cccccc
 
+//--------------------------------preloader----------------------------------------------
 .preloader
 	position: fixed
 	top: 0
@@ -231,6 +227,7 @@ body input:required:valid, body textarea:required:valid
 			opacity: 0
 			transform: scale(1)
 
+//------------------------------------btn----------------------------------------
 .btn
 	position: relative
 	display: inline-block
@@ -272,109 +269,44 @@ body input:required:valid, body textarea:required:valid
 		&::before
 			animation: btn .3s linear 1 forwards
 
+
+//--------------------------------------form-------------------------------------------
+
 .form
 	position: relative
 	display: flex
 	flex-direction: row
-	justify-content: space-between
-	padding: 45px 50px 25px 50px
-
-	h3
-		color: #212121
-		font-size: 24px
-		font-weight: 400
-		line-height: 21px
-		&::after
-			content: ''
-			display: block
-			margin: 15px auto 5px auto
-			box-shadow: 0 8px 10px rgba(251, 131, 85, 0.15)
-			background-color: #ffff00
-			background: linear-gradient(to right, #f5574b 0%, #ffa05c 100%)
-			width: 70px
-			height: 1px
-
-	b
-		color: #063346
-		font-size: 16px
-
-	i
-		margin-left: 20px
-		margin-right: 10px
-
-	&_btn
-		width: 390px
-		height: 80px
-		border-radius: 40px
-
-	p
-		color: #808080
-		font-size: 12px
-		font-weight: 400
-		line-height: 21px
-		margin-bottom: 25px
-
-	input
-		width: 390px
-		height: 80px
-		background-color: #fff
-		color: #212121
-		font-size: 14px
-		font-weight: 400
-		line-height: 1
-		padding: 10px 20px
-		width: 100%
-		border-radius: 40px
-		border: 1px solid #c7c7c7
-		background-color: #f6f6f6
-		text-align: center
-		margin-bottom: 25px
+	justify-content: space-around
+	align-items: center
 
 	&-group
-		margin: 0 auto
+		width: 30%
 		position: relative
-		text-align: center
 
-		label
-			position: absolute
-			left: 0
-			right: 0
-			bottom: -10px
-			color: red
-			transition: all .3s
+	input
+		width: 100%
+		padding: 10px 15px
+		font-size: 14px
+		border-radius: 5px
+		line-height: 1
 	
-	&__btn
-		margin-top: 25px
+	.btn
+		font-weight: 600
+		padding-top: 15px
+		padding-bottom: 15px
 
-	.hamburger
-		padding: 0
-
-	.is-active
-		right: 10px
-		top: 10px
+	label.error
 		position: absolute
-		.hamburger-inner,
-		.hamburger-inner:after,
-		.hamburger-inner:before
-			background-color: #000
-			height: 2px
-
-		&:focus
-			outline: none
-
-	.hamburger-box
-		width: 20px
-		height: 20px
-
-	.hamburger-box
-		width: 32px
+		top: -20px
 		right: 0
+		left: 0
+		transition: all .3s
+		animation: error .3s linear 1 forwards
+		color: $red
+		text-align: center
+		font-weight: 600
 
-	.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
-		width: 24px
-		height: 3px
-		right: 0
-
+//-----------------------------------------modal-----------------------------------
 .modal
 	position: relative
 	width: 320px
@@ -436,9 +368,7 @@ body input:required:valid, body textarea:required:valid
 			right: 0
 
 
-//----sass стилі гамбургера---------
-
-
+//-----------------------------------hamburgerа---------------------------
 .hamburger
 	display: none
 	position: absolute
@@ -466,8 +396,17 @@ body input:required:valid, body textarea:required:valid
 		z-index: 1001
 
 
-//----------------------img-----------------------------------
+//-----------------------------------------------------slider-swiper------------------------------------
+.swiper-pagination-bullet
+	background-color: rgba($red, .5)
+	opacity: 1
+	
+.swiper-pagination-bullet-active
+	background-color: $red
 
+
+//---------------------------------------------------------animation-------------------------------------
+//----------------------img---------------------
 @keyframes img
 		0%
 			transform: scale(1)
@@ -482,7 +421,7 @@ body input:required:valid, body textarea:required:valid
 		100%
 			transform: scale(1)
 
-//-------------------------opacity----------------------------------
+//-------------------------opacity--------------------
 @keyframes opacity
 		0%
 			opacity: 0
@@ -497,7 +436,7 @@ body input:required:valid, body textarea:required:valid
 		100%
 			opacity: 0
 
-//-------------------------btn----------------------------------
+//-------------------------btn----------------------
 @keyframes btn
 		0%
 			right: 35px
@@ -512,7 +451,7 @@ body input:required:valid, body textarea:required:valid
 		100%
 			right: 35x
 
-//----------------------banner-------------------------------------
+//----------------------banner--------------------
 @keyframes banner
 		0%
 			transform: scale(1)
@@ -526,3 +465,19 @@ body input:required:valid, body textarea:required:valid
 		
 		100%
 			transform: scale(1)
+
+//----------------------error--------------------
+
+@keyframes error
+		0%
+			transform: scale(0)
+		
+		100%
+			transform: scale(1)
+
+@keyframes error-back
+		0%
+			transform: scale(1)
+		
+		100%
+			transform: scale(0)

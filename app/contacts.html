@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8">
+	<title>Contacts</title>
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="icon" href="img/favicon.ico">
+	<meta name="theme-color" content="#000">
+
+	<link rel="stylesheet" href="libs/swiper/swiper.min.css">
+	<link rel="stylesheet" href="css/main.min.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;subset=cyrillic" rel="stylesheet">
+</head>
+
+<body>
+
+	<div class="preloader">
+		<div class="pulse"></div>
+	</div>
+
+	<header class="header">
+		<div class="container">
+			<div class="header__container">
+		
+				<div class="header__logo logo">
+					<a href="index.html"><img src="img/logo.png" alt="logo" width="240" height="65"></a>
+				</div>
+
+				<button class="hamburger hamburger--3dx" type="button">
+						<span class="hamburger-box">
+							<span class="hamburger-inner"></span>
+						</span>
+				</button>
+
+				<nav>
+					<ul>
+						<li><a href="catalog.html">Товары</a></li>
+						<li><a href="shops.html">Магазины</a></li>
+						<li><a href="contacts.html">Контакты</a></li>
+						<li><a href="factories.html">Фабрики</a></li>
+					</ul>
+				</nav>
+
+				<form action="" method="post">
+					<label for="search"><img src="img/icon/search.svg" alt="search" width="16" height="16"></label>
+					<input type="search" id="search" class="search" name="search" placeholder="Поиск товара, Пример: Рабочие столы">
+				</form>
+
+			</div>
+		</div>
+	</header>
+
+	<main class="main">
+
+		<div class="crumb">
+			<div class="container">
+
+				<ul>
+					<li><a href="index.html">Главная</a> <b>|</b> </li>
+					<li><span>Контакты</span></li>
+				</ul>
+
+			</div>
+		</div>
+
+		<section class="form-container section section__gray">
+			<div class="container">
+				
+				<h2>Если у вас есть вопросы</h2>
+				<h6>Задайте их нашему специалисту, он будет рад вам помочь</h6>
+
+				<div class="row">
+					<div class="offset-lg-2 col-lg-8 col-sm-12">
+						
+						<form action="sendmail.php" class="question form" method="post">
+							<input type="hidden" name="subject" value="Получить консультацию">
+							<div class="form-group">
+								<input type="text" class="form__field" name="name" placeholder="Введите Ваше имя" required>
+							</div>
+							<div class="form-group">
+								<input type="tel" name="phone" class="form__field" required placeholder="Введите Ваше имя" pattern="\+7\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}">
+							</div>
+							<div class="form-group">
+								<button type="submit" class="btn" name="submit" value="отправить">Заказать звонок</button>
+							</div>
+						</form>
+
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+
+	</main>
+
+	<footer class="footer">
+		<div class="container">
+
+			<div class="footer__container">
+
+				<div class="footer__block footer__logo">
+					<a href="index.html"><img src="img/logo.png" alt="logo" width="240" height="65"></a>
+					<span>© Интернет-магазин «Boss Sofa™» 2018</span>
+					<span>Все права защищены.</span>
+				</div>
+
+				<div class="footer__block">
+
+					<nav>
+						<h5>Меню</h5>
+						<ul>
+							<li><a href="catalog.html">Товары</a></li>
+							<li><a href="shops.html">Магазины</a></li>
+							<li><a href="contacts.html">Контакты</a></li>
+							<li><a href="factories.html">Фабрики</a></li>
+						</ul>
+					</nav>
+
+					<div>
+						<h5>Категории</h5>
+						<ul>
+							<li><a href="#">Деревянные кровати</a></li>
+							<li><a href="#">Тумбы прикроватные</a></li>
+							<li><a href="#">П-образные</a></li>
+							<li><a href="#">Угловие диваны</a></li>
+							<li><a href="#">Прямые</a></li>
+							<li><a href="#">Комоды</a></li>
+							<li><a href="#">Спальные</a></li>
+							<li><a href="#">Матрасы</a></li>
+							<li><a href="#">Кровати</a></li>
+
+							<li><a href="#">Кофейные столики</a></li>
+							<li><a href="#">Робочие столы</a></li>
+							<li><a href="#">Журнальные столы</a></li>
+							<li><a href="#">Обеденные столы</a></li>
+							<li><a href="#">Лавки</a></li>
+							<li><a href="#">Аксессуары</a></li>
+							<li><a href="#">Тумбы TV</a></li>
+							<li><a href="#">Витрины</a></li>
+							<li><a href="#">Кресла</a></li>
+
+							<li><a href="#">Полки</a></li>
+							<li><a href="#">Стулья</a></li>
+							<li><a href="#">Зеркала</a></li>
+							<li><a href="#">Библиотеки</a></li>
+							<li><a href="#">Барные стулья</a></li>
+							<li><a href="#">Подушки</a></li>
+							<li><a href="#">Ковры</a></li>
+							<li><a href="#">Комоды</a></li>
+							<li><a href="#">Шезлонги</a></li>
+						</ul>
+					</div>
+
+				</div>
+
+				<div class="footer__block footer__soc">
+					<h5>Мы в интернете</h5>
+					<p>Boss Sofa в соцсетях</p>
+					<ul>
+						<li><a href="#"><img src="img/icon/vk.svg" alt="vk" height="30" width="30"></a></li>
+						<li><a href="#"><img src="img/icon/fb.svg" alt="fb" height="30" width="30"></a></li>
+						<li><a href="#"><img src="img/icon/in.svg" alt="in" height="30" width="30"></a></li>
+					</ul>
+				</div>
+				
+			</div>
+
+		</div>
+	</footer>
+
+	<script src="js/scripts.min.js"></script>
+	<script src="libs/swiper/swiper.min.js"></script>
+
+</body>
+</html>
