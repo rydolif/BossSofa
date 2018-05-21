@@ -5,7 +5,8 @@
 	z-index: 1111
 	background-color: $accent
 	padding: 5px 0
-
+	transition: all .3s
+	top: -100px
 
 	&__container
 		position: relative
@@ -15,7 +16,7 @@
 		align-items: center
 
 	.search
-		width: 270px
+		width: 210px
 		background-color: $accent
 		border: none
 		border-bottom: 1px solid #808080
@@ -430,7 +431,74 @@
 		font-weight: 400
 		margin-bottom: 35px
 
+.page-slider
+	h4
+		font-size: 24px
+		margin-bottom: 20px
 
+	ul
+		font-size: 16px
+		margin-bottom: 35px
+
+	li
+		position: relative
+		padding-left: 20px
+		margin-bottom: 15px
+
+		&:last-child
+			margin-bottom: 0
+
+		&::before
+			content: ""
+			position: absolute
+			left: 0
+			top: 10px
+			height: 7px
+			width: 7px
+			background-color: $red
+			border-radius: 50%
+	a
+		color: $accent
+
+	p
+		margin-bottom: 15px
+		&:last-child
+			margin-bottom: 0
+
+	&__text
+		width: 35%
+		padding: 0 15px
+
+		b
+			font-size: 16px
+
+		img
+			margin-bottom: 35px
+			width: 100%
+
+	&__img
+		width: 65%
+		position: relative
+		padding: 0 15px 20px 15px
+		text-align: center
+
+		img
+			width: 100%
+			height: 100%
+
+		.swiper-pagination
+			position: absolute
+			text-align: center
+			transition: .3s opacity
+			transform: translate3d(0,0,0)
+			z-index: 10
+
+	.swiper-slide
+		display: flex
+		flex-direction: row
+
+.contacts
+	padding: 50px 0
 //----------------------------------catalog-------------------------------
 .catalog
 	&-title
@@ -836,18 +904,53 @@
 			img
 				width: 100%
 
-		.swiper-button-next
-			right: 25px
+//---------------------------------shops-------------------------------
+.shops
+	padding-bottom: 70px
 
-		.swiper-button-prev
-			left: 25px
+	.row
+		margin: 0
 
-		.swiper-button-next,.swiper-container-rtl .swiper-button-prev
-			background-image: url(../img/icon/arrow-slider.svg)
-			transform: rotate(180deg)
+	h1
+		text-align: left
 
-		.swiper-button-prev,.swiper-container-rtl .swiper-button-next
-			background-image: url(../img/icon/arrow-slider.svg)
+	h4
+		font-size: 24px
+		font-weight: 600
+		margin-bottom: 15px
+
+	ul
+		font-size: 16px
+
+	li
+		position: relative
+		padding-left: 20px
+		margin-bottom: 15px
+
+		&:last-child
+			margin-bottom: 0
+
+		&::before
+			content: ""
+			position: absolute
+			left: 0
+			top: 10px
+			height: 7px
+			width: 7px
+			background-color: $red
+			border-radius: 50%
+
+	a
+		color: $accent
+
+
+	&__block
+		margin-bottom: 55px
+
+		&:last-child
+			margin-bottom: 0
+
+
 
 
 @import "media" // Always at the end

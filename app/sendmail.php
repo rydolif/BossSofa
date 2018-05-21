@@ -1,5 +1,5 @@
 <?php
-	$SITE_TITLE = 'Туристическая фирма “Роза Ветров”';
+	$SITE_TITLE = 'Boss Soffa';
 	$SITE_DESCR = '';
 
 	if ( isset($_POST) ) {

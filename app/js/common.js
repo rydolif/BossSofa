@@ -69,6 +69,18 @@ var swiper = new Swiper('.card__wrap', {
     }
 });
 
+var swiper = new Swiper('.page-slider', {
+  slidesPerView: 1,
+  spaceBetween: 30,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+});
 //---------------------------------------card tabs----------------------------------
 $('.card__wrap').hide();
 $('.card__wrap:first').show();
@@ -102,6 +114,10 @@ $('.card__documentation_tab ul a').click(function(event){
 //-------------------------------попандер---------------------------------------
   $('.modal').popup({transition: 'all 0.3s'});
 
+//------------------------------------form-click------------------------------------------
+$('.form btn').click(function(event){
+  $('.modal-hidden').addClass('modal-hidden__active')
+});
 //------------------------------------form-------------------------------------------
 	$('input[type="tel"]').mask('+0 (000) 000-00-00');
 
@@ -130,6 +146,29 @@ $('.card__documentation_tab ul a').click(function(event){
     }
   });
 
+
+  $(".calculation-form").validate({
+    messages: {
+      email: "Введите ваше Email",
+      phone: "Введите ваш телефон",
+    },
+    rules: {
+      "phone": {
+        required: true,
+        phoneno: true
+      }
+    },
+    submitHandler: function(form) {
+      var t = {
+        name: jQuery(".calculation-form").find("input[name=name]").val(),
+        phone: jQuery(".calculation-form").find("input[name=phone]").val(),
+        subject: jQuery(".calculation-form").find("input[name=subject]").val()
+      };
+      ajaxSend('.calculation-form', t);
+    }
+  });
+
+
   function ajaxSend(formName, data) {
     jQuery.ajax({
       type: "POST",
@@ -147,10 +186,10 @@ $('.card__documentation_tab ul a').click(function(event){
 
 //----------------------------------------fixed----------------------------------
   $(window).scroll(function(){
-      if($(this).scrollTop()>5){
+      if($(this).scrollTop()>50){
           $('.header').addClass('header__active');
       }
-      else if ($(this).scrollTop()<5){
+      else if ($(this).scrollTop()<50){
           $('.header').removeClass('header__active');
       }
   });

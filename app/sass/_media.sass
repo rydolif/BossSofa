@@ -7,9 +7,96 @@
 	h5
 		font-size: 24px
 
+	.logo
+		height: 50px
+		img
+			width: 200px
+			height: 50px
+
 	.header
 		.search
 			width: 200px
+
+		&__container
+			padding-right: 80px
+
+		nav
+			position: fixed
+			display: block
+			width: 100%
+			height: 100%
+			flex-direction: column
+			right: -100%
+			top: 60px
+			z-index: -1
+			background-color: rgba(#fff, .95)
+			transition: all .3s
+
+			ul
+				display: flex
+				flex-direction: column
+				justify-content: center
+				align-items: center
+				margin-top: 40px
+
+			li
+				margin: 0
+				margin-bottom: 10px
+
+			a
+				color: $accent
+				&::before
+					content: ''
+					width: 0
+					transform: scale(0)
+					transition: all .3s
+					position: absolute
+					bottom: 0
+					width: 100%
+					height: 1px
+					background-color: $accent
+					z-index: -1
+
+				&:hover
+					color: $accent
+					text-decoration: none
+					&::before
+						transform: scale(1)
+
+				&:focus
+					color: $accent
+					text-decoration: none
+					&::before
+						transform: scale(1)
+		
+		&__active
+			position: fixed
+			right: 0
+			left: 0
+			top: 0
+			z-index: 1000
+
+		&__menu
+			position: fixed
+			right: 0
+			left: 0
+			top: 0
+			z-index: 1000
+			transiti0n: all .3s
+
+		.hamburger
+			display: block
+			z-index: 1001
+			right: 15px
+
+		.hamburger-box
+			right: 0
+
+		.nav-active
+			right: 0px
+	
+	.main__menu
+		padding-top: 75px
 
 	.section
 		padding: 50px 0
@@ -71,96 +158,16 @@
 
 	h3
 		font-size: 30px
+	
+	.logo
+		width: 200px
+	
+	.header
+		.search
+			width: 180px
 
 	.section
 		padding: 30px 0
-
-	.logo
-		height: 50px
-		img
-			width: 200px
-			height: 50px
-	
-	.header
-		&__container
-			padding-right: 80px
-
-		nav
-			position: fixed
-			display: block
-			width: 100%
-			height: 100%
-			flex-direction: column
-			right: -100%
-			top: 60px
-			z-index: -1
-			background-color: rgba(#fff, .95)
-			transition: all .3s
-
-			ul
-				display: flex
-				flex-direction: column
-				justify-content: center
-				align-items: center
-				margin-top: 40px
-
-			li
-				margin: 0
-				margin-bottom: 10px
-
-			a
-				color: $accent
-				&::before
-					content: ''
-					width: 0
-					transform: scale(0)
-					transition: all .3s
-					position: absolute
-					bottom: 0
-					width: 100%
-					height: 1px
-					background-color: $accent
-					z-index: -1
-
-				&:hover
-					color: $accent
-					text-decoration: none
-					&::before
-						transform: scale(1)
-
-				&:focus
-					color: $accent
-					text-decoration: none
-					&::before
-						transform: scale(1)
-		
-		&__active
-			position: fixed
-			right: 0
-			left: 0
-			z-index: 1000
-			transiti0n: all .3s
-
-		&__menu
-			position: fixed
-			right: 0
-			left: 0
-			z-index: 1000
-			transiti0n: all .3s
-
-		.hamburger
-			display: block
-			z-index: 1001
-			right: 15px
-
-		.hamburger-box
-			right: 0
-
-		.nav-active
-			right: 0px
-	
-	.main__menu
-		padding-top: 60px
 
 	.category
 		&__item
@@ -277,6 +284,52 @@
 		.btn
 			padding-left: 25px
 
+	.shops
+		padding-bottom: 30px
+
+
+		&__block
+			margin-bottom: 30px
+			&:last-child
+				margin-bottom: 30px
+
+	#map
+		height: 400px
+
+	.contacts
+		padding: 20px 0
+
+		.swiper-slide
+			flex-direction: column
+
+	.page-slider
+		&__text
+			width: 100%
+			margin-bottom: 30px
+
+		&__img
+			width: 100%
+
+	.factories
+		.swiper-slide
+			flex-direction: column-reverse
+
+		.page-slider
+			&__text
+				text-align: center
+				img
+					width: auto
+
+				p
+					text-align: left
+
+	.modal
+		padding: 30px
+		width: 100%
+
+		img
+			display: none
+
 @media only screen and (max-width : 776px)
 	
 	h1, h2
@@ -289,6 +342,15 @@
 			height: 50px
 			img
 				width: 180px
+		&__btn
+			display: none
+	
+	nav
+		.nav__btn
+			display: block
+			max-width: 270px
+			margin: 0 auto
+			color: #fff
 
 	.category
 		&__item
@@ -338,6 +400,12 @@
 
 		.btn
 			width: 100%
+
+	#thanks
+		width: 320px
+
+		h2
+			font-size: 24px
 @media only screen and (max-width : 540px)
 	.header
 		.search
@@ -362,21 +430,28 @@
 			p
 				margin-bottom: 15px
 
+	#map
+		height: 300px
+
 
 @media only screen and (max-width : 480px)
 	.logo
 		width: 160px
-		height: 50px
+		height: 45px
 		img
 			width: 160px
-			height: 50px
+			height: 45px
 
 	.header
+		nav
+			top: 55px
+
 		&__container
 			padding-right: 60px
 
 		.search
 			width: 100px
+			margin-right: 15px
 
 	.category
 		&__item
@@ -416,4 +491,10 @@
 			&_block
 				width: 100%
 
-
+	.modal
+		.form-group
+			flex-wrap: wrap
+			&__block
+				width: 100%
+				&:nth-child(even)
+					width: 100%

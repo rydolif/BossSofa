@@ -1,8 +1,17 @@
+@import "fonts"
+
+//----------------------fonts---------------------
+$fonts: 'Montserrat', sans-serif
+//---------------------end-fonts---------------------
+
+
 //----------------------color---------------------
 $accent: #212121
 $red: #f2634b
 
-//----------------------color---------------------
+//---------------------end-color---------------------
+
+
 html, body
 	height: 100%
 
@@ -11,7 +20,7 @@ body
 	position: relative
 	min-width: 400px
 	line-height: 1.65
-	font-family: 'Montserrat', sans-serif
+	font-family: $fonts
 	font-size: 14px
 	color: $accent
 
@@ -81,7 +90,7 @@ nav
 		justify-content: space-between
 
 	li
-		margin-right: 40px
+		margin-right: 30px
 		&:last-child
 			margin-right: 0
 	
@@ -115,8 +124,12 @@ nav
 				&::before
 					transform: scale(1)
 
+	.nav__btn
+		display: none
+
 input, textarea
 	border: #666 1px solid
+	border-radius: 0
 	outline: none
 	&:focus:required:invalid
 		border-color: red
@@ -153,7 +166,6 @@ input
 		outline: none
 		box-shadow: none
 		-webkit-appearance: none
-
 
 textarea
 	resize: none
@@ -194,7 +206,7 @@ body input:required:valid, body textarea:required:valid
 
 .pulse::before, .pulse::after
 	content: ''
-	border: 5px solid #721bb6
+	border: 5px solid $red
 	height: 80px
 	width: 80px
 	border-radius: 50%
@@ -309,45 +321,85 @@ body input:required:valid, body textarea:required:valid
 //-----------------------------------------modal-----------------------------------
 .modal
 	position: relative
-	width: 320px
+	overflow: hidden
+	width: 1000px
 	height: auto
-	top: auto
-	padding: 40px
+	padding: 55px 55px 55px 360px
 	border-radius: 10px
 	background-color: #fff
-	text-align: center
+
+	&-hidden
+		position: absolute
+		right: 0
+		top: 0
+		left: 0
+		bottom: 0
+		z-index: -1
+		background-color: #fff
+
+		&__active
+			z-index: 100
+
+	img
+		position: absolute
+		left: 0
+		top: 0
+		height: 100%
+		max-width: 320px
 
 	h2
-		text-align: center
-		color: #041830
 		margin-bottom: 15px
+		font-size: 32px
+		text-align: left
+		font-weight: 400
 
 	p
-		text-align: center
-		margin-bottom: 20px
-		color: #7e8187
+		font-size: 16px
+
+	.form-group
+		display: flex
+		flex-direction: row
+		width: 100%
+		margin-bottom: 30px
+
+		&__block
+			width: 53%
+			&:nth-child(even)
+				width: 45%
+
+	select
+		width: 100%
+		padding: 8px 20px
+		border-color: $red
+		border-radius: 4px
+		outline: none
+
+		&:nth-child(n+2)
+			margin-top: 20px
 
 	input
-		width: 390px
-		height: 60px
-		background-color: #fff
-		color: #212121
-		font-size: 14px
-		font-weight: 400
-		line-height: 1
-		padding: 10px 20px
 		width: 100%
-		border-radius: 40px
-		border: 1px solid #c7c7c7
-		background-color: #f6f6f6
-		text-align: center
-		margin-bottom: 30px
-	
+		padding: 8px 20px
+		border-color: $red
+		border-radius: 4px
+		outline: none
+
 	.btn
-		height: 60px
-		font-size: 14px
-		padding: 18px 15px
-		width: 100%
+		font-weight: 600
+		padding-top: 15px
+		padding-bottom: 15px
+
+	label.error
+		position: absolute
+		top: -20px
+		right: 0
+		left: 0
+		transition: all .3s
+		animation: error .3s linear 1 forwards
+		color: $red
+		text-align: center
+		font-weight: 600
+
 
 	.hamburger
 		position: absolute
@@ -366,6 +418,31 @@ body input:required:valid, body textarea:required:valid
 			width: 30px
 			height: 4px
 			right: 0
+
+#thanks
+	width: 720px
+	text-align: center
+	padding: 30px
+
+	h2
+		font-size: 32px
+		text-align: center
+
+	p
+		text-align: center
+
+	b
+		font-weight: 600
+
+	img
+		position: relative
+		width: 100px
+		height: 100px
+		margin: 45px auto
+		right: 50%
+		left: 50%
+		transform: translate(-50%, 0%)
+
 
 
 //-----------------------------------hamburgerа---------------------------
@@ -397,13 +474,32 @@ body input:required:valid, body textarea:required:valid
 
 
 //-----------------------------------------------------slider-swiper------------------------------------
+.swiper-pagination
+	width: 100%
+
 .swiper-pagination-bullet
 	background-color: rgba($red, .5)
 	opacity: 1
+	margin: 0 4px
 	
 .swiper-pagination-bullet-active
 	background-color: $red
 
+.swiper-button-next
+	right: 25px
+
+.swiper-button-prev
+	left: 25px
+
+.swiper-button-next,.swiper-container-rtl .swiper-button-prev
+	background-image: url(../img/icon/arrow-slider.svg)
+	transform: rotate(180deg)
+
+.swiper-button-prev,.swiper-container-rtl .swiper-button-next
+	background-image: url(../img/icon/arrow-slider.svg)
+//-------------------------------------карта-map--------------------------------
+#map
+	height: 620px
 
 //---------------------------------------------------------animation-------------------------------------
 //----------------------img---------------------

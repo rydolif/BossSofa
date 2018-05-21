@@ -3,17 +3,15 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Shops</title>
+	<title>Contacts</title>
 	<meta name="description" content="">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="icon" href="img/favicon.ico">
 	<meta name="theme-color" content="#000">
 
-	<link rel="stylesheet" href="libs/swiper/swiper.min.css">
 	<link rel="stylesheet" href="css/main.min.css">
 
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;subset=cyrillic" rel="stylesheet">
 </head>
 
 <body>
@@ -21,6 +19,7 @@
 	<div class="preloader">
 		<div class="pulse"></div>
 	</div>
+
 
 	<header class="header">
 		<div class="container">
@@ -43,12 +42,15 @@
 						<li><a href="contacts.html">Контакты</a></li>
 						<li><a href="factories.html">Фабрики</a></li>
 					</ul>
+					<button class="btn nav__btn calculation_open">Рассчитать</button>
 				</nav>
 
 				<form action="" method="post">
 					<label for="search"><img src="img/icon/search.svg" alt="search" width="16" height="16"></label>
-					<input type="search" id="search" class="search" name="search" placeholder="Поиск товара, Пример: Рабочие столы">
+					<input type="search" id="search" class="search" name="search" placeholder="Поиск товара">
 				</form>
+
+				<a href="#" class="btn header__btn calculation_open">Рассчитать</a>
 
 			</div>
 		</div>
@@ -61,11 +63,65 @@
 
 				<ul>
 					<li><a href="index.html">Главная</a> <b>|</b> </li>
-					<li><span>Магазины</span></li>
+					<li><span>Контакты</span></li>
 				</ul>
 
 			</div>
 		</div>
+
+		<section class="contacts">
+			<div class="container">
+				<div class="row">
+
+					<div class="page-slider swiper-container">
+						<div class="swiper-wrapper">
+
+							<div class="swiper-slide">
+								<div class="page-slider__text">
+									<h4>Магазин “Boss Sofa”</h4>
+									<ul>
+										<li>г. Москва, ул. 1-Щипковский переулок, 4 </li>
+										<li><a href="tel:+7(456)743-26-82">+7 (456) 743-26-82</a></li>
+										<li><a href="#">boss-sofa@gmail.com </a></li>
+										<li>Пн. - Вс. с 10:00 до 21:00</li>
+									</ul>
+									<p>Модульная мягкая и корпусная мебель из Германии в салоне Boss Sofa на Нахимовском.</p>
+									<p>В салонах BOSS SOFA представлены в наличии лучшие модели кожаных  кресел и диванов от одного из крупнейших европейских производителей. Угловые и прямые, раскладные и нет, с реклайнерами и регулирующимися подголовниками - широкий модельный ряд удовлетворит самого требовательного покупателя.</p>
+								</div>
+								<div class="page-slider__img">
+									<img src="img/slider/1.jpg" alt="slider">
+									<div class="swiper-pagination"></div>
+									<div class="swiper-button-next"></div>
+									<div class="swiper-button-prev"></div>
+								</div>
+							</div>
+
+							<div class="swiper-slide">
+								<div class="page-slider__text">
+									<h4>Далеко-далеко за словесными горами в стране, гласных</h4>
+									<ul>
+										<li>г. Москва, ул. 1-Щипковский переулок, 4 </li>
+										<li><a href="tel:+7(456)743-26-82">+7 (456) 743-26-82</a></li>
+										<li><a href="#">boss-sofa@gmail.com </a></li>
+										<li>Пн. - Вс. с 10:00 до 21:00</li>
+									</ul>
+									<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Города щеке большой повстречался рукопись, родного все коварный маленькая рот.</p>
+								</div>
+								<div class="page-slider__img">
+									<img src="img/slider/1.jpg" alt="slider">
+									<div class="swiper-pagination"></div>
+									<div class="swiper-button-next"></div>
+									<div class="swiper-button-prev"></div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
 
 		<section class="form-container section section__gray">
 			<div class="container">
@@ -77,12 +133,12 @@
 					<div class="offset-lg-2 col-lg-8 col-sm-12">
 						
 						<form action="sendmail.php" class="question form" method="post">
-							<input type="hidden" name="subject" value="Получить консультацию">
+							<input type="hidden" name="subject" value="Заказать звонок">
 							<div class="form-group">
 								<input type="text" class="form__field" name="name" placeholder="Введите Ваше имя" required>
 							</div>
 							<div class="form-group">
-								<input type="tel" name="phone" class="form__field" required placeholder="Введите Ваше имя" pattern="\+7\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}">
+								<input type="tel" name="phone" class="form__field" required placeholder="Введите Ваш телефон" pattern="\+7\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}">
 							</div>
 							<div class="form-group">
 								<button type="submit" class="btn" name="submit" value="отправить">Заказать звонок</button>
@@ -94,7 +150,6 @@
 
 			</div>
 		</section>
-
 
 	</main>
 
@@ -173,8 +228,107 @@
 		</div>
 	</footer>
 
+	<div class="modal" id="calculation">
+
+		<img src="img/modal.jpg" alt="modal">
+
+		<button class="hamburger hamburger--elastic is-active calculation_close" type="button">
+		  <span class="hamburger-box">
+		    <span class="hamburger-inner"></span>
+		  </span>
+  	</button>
+
+			<h2><b>Ответьте на 5 простых вопросов</b><br> чтобы расчитать стоимость дивана</h2>
+
+		  <form action="sendmail.php" class="calculation-form" id="form" method="post">
+
+		    <input type="hidden" name="subject" value="Ответьте на 5 простых вопросов">
+
+				<div class="form-group">
+					<div class="form-group__block"><p>Выберете название дивана:</p></div>
+					<div class="form-group__block">
+						<select name="one" form="form">
+							<option>WALDAX</option>
+							<option>Пункт 2</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="form-group__block"><p>Выберете конфигурацию:</p></div>
+					<div class="form-group__block">
+						<select name="two" form="form">
+							<option>Прямой</option>
+							<option>Кривой</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="form-group__block"><p>Укажите желаемый размер:</p></div>
+					<div class="form-group__block">
+						<select name="three" form="form">
+							<option>1м</option>
+							<option>2м</option>
+						</select>
+						<select name="four" form="form">
+							<option>1м</option>
+							<option>2м</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="form-group__block"><p>Выберете ткань:</p></div>
+					<div class="form-group__block">
+						<select name="five" form="form">
+							<option>Нубука</option>
+							<option>Имитация кожи</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="form-group__block"><p>Укажите куда отправить стоимость:</p></div>
+					<div class="form-group__block">
+						<select name="six" form="form">
+							<option>WatsApp</option>
+							<option>Почта</option>
+							<option>Телефон</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="form-group__block"><p>Ваше Email:</p></div>
+					<div class="form-group__block">
+						<input type="text" class="form__field" name="email" placeholder="Ваше Email" required>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="form-group__block"><p>Ваш телефон:</p></div>
+					<div class="form-group__block">
+						<input type="tel" name="phone" class="form__field" required placeholder="Ваш телефон" pattern="\+7\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}">
+					</div>
+				</div>
+
+				<button type="submit" class="btn" name="submit" value="отправить">Рассчитать стоимость</button>
+
+			</form>
+	</div>
+
+	<div class="modal" id="thanks">
+			<button class="hamburger hamburger--elastic is-active thanks_close modal__close" type="button">
+			  <span class="hamburger-box">
+			    <span class="hamburger-inner"></span>
+			  </span>
+	  	</button>
+	  	<img src="img/icon/success.svg" alt="success" width="100" height="100">
+			<h2><b>Спасибо!</b><br>Результат придёт в течении 5 минут</h2>
+	</div>
+
 	<script src="js/scripts.min.js"></script>
-	<script src="libs/swiper/swiper.min.js"></script>
 
 </body>
 </html>
