@@ -114,10 +114,6 @@ $('.card__documentation_tab ul a').click(function(event){
 //-------------------------------попандер---------------------------------------
   $('.modal').popup({transition: 'all 0.3s'});
 
-//------------------------------------form-click------------------------------------------
-$('.form btn').click(function(event){
-  $('.modal-hidden').addClass('modal-hidden__active')
-});
 //------------------------------------form-------------------------------------------
 	$('input[type="tel"]').mask('+0 (000) 000-00-00');
 
@@ -160,9 +156,14 @@ $('.form btn').click(function(event){
     },
     submitHandler: function(form) {
       var t = {
-        name: jQuery(".calculation-form").find("input[name=name]").val(),
+        email: jQuery(".calculation-form").find("input[name=email]").val(),
         phone: jQuery(".calculation-form").find("input[name=phone]").val(),
-        subject: jQuery(".calculation-form").find("input[name=subject]").val()
+        one: jQuery(".calculation-form").find("select[name=one]").val(),
+        two: jQuery(".calculation-form").find("select[name=two]").val(),
+        three: jQuery(".calculation-form").find("select[name=three]").val(),
+        four: jQuery(".calculation-form").find("select[name=four]").val(),
+        five: jQuery(".calculation-form").find("select[name=five]").val(),
+        six: jQuery(".calculation-form").find("select[name=six]").val(),
       };
       ajaxSend('.calculation-form', t);
     }
@@ -183,6 +184,15 @@ $('.form btn').click(function(event){
       }
     });
   }
+
+//------------------------------------form-click------------------------------------------
+$('.btn-click').click(function(event){
+  $('.modal-hidden').show();
+});
+
+$('.calculation_close').click(function(event){
+  $('.modal-hidden').hide();
+});
 
 //----------------------------------------fixed----------------------------------
   $(window).scroll(function(){
