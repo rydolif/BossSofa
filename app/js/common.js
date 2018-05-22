@@ -37,7 +37,7 @@ var swiper = new Swiper('.articles__list', {
   }
 });
 
-var swiper = new Swiper('.reviews__list', {
+var swiperlist = new Swiper('.reviews__list', {
   slidesPerView: 3,
   spaceBetween: 30,
   pagination: {
@@ -56,7 +56,34 @@ var swiper = new Swiper('.reviews__list', {
   }
 });
 
-var swiper = new Swiper('.card__wrap', {
+
+var swiperslider = new Swiper('.page-slider', {
+  slidesPerView: 1,
+  spaceBetween: 30,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+});
+
+
+var swiper1 = new Swiper('#one', {
+  slidesPerView: 1,
+  spaceBetween: 30,
+    pagination: {
+      el: '.pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+});
+var swiper2 = new Swiper('#two', {
   slidesPerView: 1,
   spaceBetween: 30,
     pagination: {
@@ -69,11 +96,11 @@ var swiper = new Swiper('.card__wrap', {
     }
 });
 
-var swiper = new Swiper('.page-slider', {
+var swiper3 = new Swiper('#three', {
   slidesPerView: 1,
   spaceBetween: 30,
     pagination: {
-      el: '.swiper-pagination',
+      el: '.pagination',
       clickable: true,
     },
     navigation: {
@@ -81,6 +108,20 @@ var swiper = new Swiper('.page-slider', {
       prevEl: '.swiper-button-prev',
     }
 });
+
+var swiper4 = new Swiper('#four', {
+  slidesPerView: 1,
+  spaceBetween: 30,
+    pagination: {
+      el: '.pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+});
+
 //---------------------------------------card tabs----------------------------------
 $('.card__wrap').hide();
 $('.card__wrap:first').show();
@@ -94,7 +135,11 @@ $('.tabs ul a').click(function(event){
 
   var selectTab = $(this).attr('href');
   $(selectTab).fadeIn();
-});
+    swiper1.update();
+    swiper2.update();
+    swiper3.update();
+    swiper4.update();
+  });
 
 //---------------------------------------documentation tabs----------------------------------
 $('.card__documentation_wrap').hide();
@@ -188,10 +233,12 @@ $('.card__documentation_tab ul a').click(function(event){
 //------------------------------------form-click------------------------------------------
 $('.btn-click').click(function(event){
   $('.modal-hidden').show();
+  $('.modal-visible').hide();
 });
 
 $('.calculation_close').click(function(event){
   $('.modal-hidden').hide();
+  $('.modal-visible').show();
 });
 
 //----------------------------------------fixed----------------------------------
