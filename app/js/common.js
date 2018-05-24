@@ -71,56 +71,54 @@ var swiperslider = new Swiper('.page-slider', {
 });
 
 
-var swiper1 = new Swiper('#one', {
-  slidesPerView: 1,
-  spaceBetween: 30,
-    pagination: {
-      el: '.pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    }
-});
-var swiper2 = new Swiper('#two', {
-  slidesPerView: 1,
-  spaceBetween: 30,
-    pagination: {
-      el: '.pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    }
-});
-
-var swiper3 = new Swiper('#three', {
-  slidesPerView: 1,
-  spaceBetween: 30,
-    pagination: {
-      el: '.pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    }
-});
-
-var swiper4 = new Swiper('#four', {
-  slidesPerView: 1,
-  spaceBetween: 30,
-    pagination: {
-      el: '.pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    }
-});
+// var swiper1 = new Swiper('#one', {
+//   slidesPerView: 1,
+//   spaceBetween: 30,
+//     pagination: {
+//       el: '.pagination',
+//       clickable: true,
+//     },
+//     navigation: {
+//       nextEl: '.swiper-button-next',
+//       prevEl: '.swiper-button-prev',
+//     },
+// });
+// var swiper2 = new Swiper('#two', {
+//   slidesPerView: 1,
+//   spaceBetween: 30,
+//     pagination: {
+//       el: '.pagination',
+//       clickable: true,
+//     },
+//     navigation: {
+//       nextEl: '.swiper-button-next',
+//       prevEl: '.swiper-button-prev',
+//     }
+// });
+// var swiper3 = new Swiper('#three', {
+//   slidesPerView: 1,
+//   spaceBetween: 30,
+//     pagination: {
+//       el: '.pagination',
+//       clickable: true,
+//     },
+//     navigation: {
+//       nextEl: '.swiper-button-next',
+//       prevEl: '.swiper-button-prev',
+//     }
+// });
+// var swiper4 = new Swiper('#four', {
+//   slidesPerView: 1,
+//   spaceBetween: 30,
+//     pagination: {
+//       el: '.pagination',
+//       clickable: true,
+//     },
+//     navigation: {
+//       nextEl: '.swiper-button-next',
+//       prevEl: '.swiper-button-prev',
+//     }
+// });
 
 //---------------------------------------card tabs----------------------------------
 $('.card__wrap').hide();
@@ -135,10 +133,12 @@ $('.tabs ul a').click(function(event){
 
   var selectTab = $(this).attr('href');
   $(selectTab).fadeIn();
-    swiper1.update();
-    swiper2.update();
-    swiper3.update();
-    swiper4.update();
+
+  swiper1.update();
+  swiper2.update();
+  swiper3.update();
+  swiper4.update();
+
   });
 
 //---------------------------------------documentation tabs----------------------------------
