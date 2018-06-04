@@ -1,5 +1,36 @@
 @import "vars"
 
+@media only screen and (max-width : 1400px)
+	.category
+		&__list
+			max-width: 1116px
+			margin: 0 auto
+
+		&__item
+			width: 33.33333333%
+			padding: 0 12px
+	
+	.articles
+		&__list
+			max-width: 1116px
+			margin: 0 auto
+
+		&__item
+			width: 33.33333333%
+			padding: 0 12px
+
+@media only screen and (min-width : 1920px)
+	.category
+		&__item
+			&_link
+				height: 216px
+				width: 384px
+
+		&__banner
+			height: 216px
+			width: 66%
+			margin: 0
+
 @media only screen and (min-width : 1200px)
 	.container
 		max-width: 1230px
@@ -151,7 +182,12 @@
 		&-content
 			padding-bottom: 50px
 			&__container
+
 				margin-bottom: 50px
+
+			&__block
+				img
+					width: 100%
 
 @media only screen and (max-width : 992px)
 	
@@ -343,7 +379,6 @@
 			img
 				width: 180px
 
-''
 	nav
 		.nav__btn
 			display: block

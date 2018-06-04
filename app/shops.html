@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Contacts</title>
+	<title>Магазины</title>
 	<meta name="description" content="">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -39,7 +39,6 @@
 					<ul>
 						<li><a href="catalog.html">Товары</a></li>
 						<li><a href="shops.html">Магазины</a></li>
-						<li><a href="contacts.html">Контакты</a></li>
 						<li><a href="factories.html">Фабрики</a></li>
 					</ul>
 				</nav>
@@ -61,11 +60,53 @@
 
 				<ul>
 					<li><a href="index.html">Главная</a> <b>|</b> </li>
-					<li><span>Контакты</span></li>
+					<li><span>Магазины</span></li>
 				</ul>
 
 			</div>
 		</div>
+
+
+		<section class="shops">
+			<div class="container">
+				
+				<h1>Найдите свой магазин</h1>
+
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="shops__block">
+							<h4>ТВЦ “Твинстор”</h4>
+							<ul>
+								<li>г. Москва, ул. 1-Щипковский переулок, 4 </li>
+								<li><a href="tel:+7(456)743-26-82"></a>+7 (456) 743-26-82 </li>
+								<li>Пн. - Вс. с 10:00 до 21:00</li>
+							</ul>
+						</div>
+						<div class="shops__block">
+							<h4>ТЦ “Три Кита”</h4>
+							<ul>
+								<li>Московская обл., Одинцовский р-н, Новоивановское пгт, ул. Луговая, 1</li>
+								<li><a href="tel:+7(456)743-26-82"></a>+7 (456) 743-26-82 </li>
+								<li>Пн. - Вс. с 10:00 до 21:00</li>
+							</ul>
+						</div>
+						<div class="shops__block">
+							<h4>ТВК “Mobel expo”</h4>
+							<ul>
+								<li>г. Москва, Нахимовский проспект, 24</li>
+								<li><a href="tel:+7(456)743-26-82"></a>+7 (456) 743-26-82 </li>
+								<li>Пн. - Вс. с 10:00 до 21:00</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-8">
+						
+						<div id="map"></div>
+					</div>
+				</div>
+
+			</div>
+		</section>
 
 		<section class="contacts">
 			<div class="container">
@@ -120,7 +161,6 @@
 			</div>
 		</section>
 
-
 		<section class="form-container section section__gray">
 			<div class="container">
 				
@@ -169,7 +209,6 @@
 						<ul>
 							<li><a href="catalog.html">Товары</a></li>
 							<li><a href="shops.html">Магазины</a></li>
-							<li><a href="contacts.html">Контакты</a></li>
 							<li><a href="factories.html">Фабрики</a></li>
 						</ul>
 					</nav>
@@ -340,6 +379,81 @@
 	</div>
 
 	<script src="js/scripts.min.js"></script>
+
+	
+	<script>
+
+		var markersData = [
+	{
+		lat: 55.7215766,     // Широта
+		lng:  37.6289893,    // Долгота
+		name: "ТВЦ “Твинстор”", // Произвольное название, которое будем выводить в информационном окне
+		address:"г. Москва, ул. 1-Щипковский переулок, 4"   // Адрес, который также будем выводить в информационном окне
+	},
+	{
+		lat: 55.7042798,
+		lng: 37.3555932,
+		name: "ТЦ “Три Кита”",
+		address:"Московская обл., Одинцовский р-н, Новоивановское пгт, ул. Луговая, 1"
+	},
+	{
+		lat: 55.6714685,
+		lng: 37.5838612,
+		name: "ТВК “Mobel expo”",
+		address:"г. Москва, Нахимовский проспект, 24"
+	}
+];
+		var map, infoWindow;
+		function initMap() {
+		    var centerLatLng = new google.maps.LatLng(55.7215766, 37.6289893);
+		    var mapOptions = {
+		        center: centerLatLng,
+		        zoom: 8
+		    };
+		    map = new google.maps.Map(document.getElementById("map"), mapOptions);
+		    // Создаем объект информационного окна и помещаем его в переменную infoWindow
+		    // Так как у каждого информационного окна свое содержимое, то создаем пустой объект, без передачи ему параметра content
+		    infoWindow = new google.maps.InfoWindow();
+		    // Отслеживаем клик в любом месте карты
+		    google.maps.event.addListener(map, "click", function() {
+		        // infoWindow.close - закрываем информационное окно.
+		        infoWindow.close();
+		    });
+		    // Перебираем в цикле все координата хранящиеся в markersData
+		    var bounds = new google.maps.LatLngBounds();
+		    for (var i = 0; i < markersData.length; i++){
+		        var latLng = new google.maps.LatLng(markersData[i].lat, markersData[i].lng);
+		        var name = markersData[i].name;
+		        var address = markersData[i].address;
+		        // Добавляем маркер с информационным окном
+		        addMarker(latLng, name, address);
+		        bounds.extend(latLng);
+		    }
+		    map.fitBounds(bounds);
+		}
+		// google.maps.event.addDomListener(window, "load", initMap);
+		// Функция добавления маркера с информационным окном
+		function addMarker(latLng, name, address) {
+		    var marker = new google.maps.Marker({
+		        position: latLng,
+		        map: map,
+		        title: name
+		    });
+		    // Отслеживаем клик по нашему маркеру
+		    google.maps.event.addListener(marker, "click", function() {
+		        // contentString - это переменная в которой хранится содержимое информационного окна.
+		        var contentString = '<div class="infowindow">' +
+		                                '<h3>' + name + '</h3>' +
+		                                '<p>' + address + '</p>' +
+		                            '</div>';
+		        // Меняем содержимое информационного окна
+		        infoWindow.setContent(contentString);
+		        // Показываем информационное окно
+		        infoWindow.open(map, marker);
+		    });
+		}
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmnk4RCDwjSucIJ2WXRnLkuCrsWR4DUM4&callback=initMap"></script>
 
 </body>
 </html>

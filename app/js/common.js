@@ -20,19 +20,17 @@ $('.button').click(function (){
 //----------------------------------slider------------------------------------------
 var swiper = new Swiper('.articles__list', {
   slidesPerView: 3,
-  spaceBetween: 30,
+  spaceBetween: 0,
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
   },
   breakpoints: {
     768: {
-      slidesPerView: 1,
-      spaceBetween: 20
+      slidesPerView: 1
     },
     992: {
-      slidesPerView: 2,
-      spaceBetween: 30
+      slidesPerView: 2
     }
   }
 });
