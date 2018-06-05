@@ -34,7 +34,7 @@
 		margin-right: 10px
 
 .main
-	padding-top: 140px
+	padding-top: 120px
 
 .section
 	background-color: #fff
@@ -70,9 +70,17 @@
 
 			a
 				font-size: 13px
+				line-height: 1
 				&:hover
 					text-decoration: underline
 
+		&_block
+			display: flex
+			flex-direction: row
+			justify-content: space-between
+			font-size: 16px
+			strong
+				color: $red
 
 		&_link
 			display: block
@@ -423,9 +431,15 @@
 	left: 0
 	z-index: 1111
 	background-color: #fff
-	padding: 15px 0
+	padding: 5px 0
 	font-size: 14px
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.18)
+
+	&__container
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+		align-items: center
 
 	ul
 		display: flex
@@ -553,7 +567,7 @@
 		h2
 			text-align: left
 			margin-bottom: 20px
-
+		
 		&__container
 			display: flex
 			flex-direction: row
@@ -606,8 +620,6 @@
 		text-align: center
 
 		&__currency
-			padding-top: 10px
-			padding-bottom: 10px
 			display: flex
 			justify-content: flex-end
 
@@ -648,29 +660,16 @@
 			justify-content: space-between
 			flex-wrap: wrap
 			margin-bottom: 40px
+			padding: 20px 0
 
 		&__block
 			width: 33.333333333%
-			border: 1px solid #f2f2f2
 			overflow: hidden
 			padding: 0 12px
 
 			&:hover
 				img
 					animation: banner .3s linear 1 forwards
-
-			&:nth-child(-n+3)
-				border-top: none
-				border-right: none
-
-			&:nth-child(3n+1)
-				border-left: none
-
-			&:nth-child(n+3)
-				border-right: none
-
-			&:nth-child(n+4)
-				border-bottom: none
 
 			img
 				width: 348px
@@ -690,6 +689,7 @@
 				display: flex
 				flex-direction: row
 				justify-content: space-between
+				font-size: 16px
 
 			b
 				font-weight: 700
