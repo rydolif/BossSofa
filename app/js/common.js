@@ -68,6 +68,18 @@ var swiperslider = new Swiper('.page-slider', {
     }
 });
 
+var swiperslider = new Swiper('.card__documentation_box', {
+  slidesPerView: 1,
+  spaceBetween: 30,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+});
 
 // var swiper1 = new Swiper('#one', {
 //   slidesPerView: 1,
