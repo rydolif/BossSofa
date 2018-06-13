@@ -10,6 +10,12 @@ $('.hamburger--3dx').click(function() {
   $('.main').toggleClass('main__menu');
 });
 
+
+  var header = $('.header').innerHeight();
+  var crumb = $('.crumb').innerHeight();
+  var padding = crumb + header + 10;
+  $('main').css('padding-top', padding);
+
 //-------------------------------переключатель---------------------------------------
 $('.button').click(function (){
   $(this).toggleClass('button-active');
@@ -68,18 +74,18 @@ var swiperslider = new Swiper('.page-slider', {
     }
 });
 
-var swiperslider = new Swiper('.card__documentation_box', {
-  slidesPerView: 1,
-  spaceBetween: 30,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    }
-});
+// var swiperslider = new Swiper('.card__documentation_box', {
+//   slidesPerView: 1,
+//   spaceBetween: 30,
+//     pagination: {
+//       el: '.swiper-pagination',
+//       clickable: true,
+//     },
+//     navigation: {
+//       nextEl: '.swiper-button-next',
+//       prevEl: '.swiper-button-prev',
+//     }
+// });
 
 // var swiper1 = new Swiper('#one', {
 //   slidesPerView: 1,
@@ -164,6 +170,10 @@ $('.card__documentation_tab ul a').click(function(event){
 
   var selectTab = $(this).attr('href');
   $(selectTab).fadeIn();
+
+  swiperlist.update();
+  swiperslider.update();
+
 });
 
 //-------------------------------попандер---------------------------------------
@@ -253,6 +263,7 @@ $('.calculation_close').click(function(event){
 
 //----------------------------------------fixed----------------------------------
   $(window).scroll(function(){
+
       if($(this).scrollTop()>50){
           $('.header').addClass('header__active');
       }

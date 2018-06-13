@@ -26,7 +26,7 @@
 			<div class="header__container">
 		
 				<div class="header__logo logo">
-					<a href="index.html"><img src="img/logo.png" alt="logo" width="240" height="65"></a>
+					<a href="index.html"><img src="img/logo.png" alt="logo" width="240" height="75"></a>
 				</div>
 
 				<button class="hamburger hamburger--3dx" type="button">
@@ -279,7 +279,6 @@
 								<div><img src="img/sheme/1.jpg" alt="scheme"></div>
 								<div><img src="img/sheme/2.jpg" alt="scheme"></div>
 							</div>
-							<a href="#" class="btn">Скачать схему</a>
 						</div>
 					</div>
 				</div>
@@ -296,13 +295,13 @@
 						<div class="card__documentation_box swiper-container">
 							<div class="swiper-wrapper">
 								<div class="swiper-slide">
-									<div class=""><img src="img/category/1.jpg" alt="item"></div>
+									<img src="img/category/1.jpg" alt="item">
 								</div>
 								<div class="swiper-slide">
-									<div class=""><img src="img/category/2.jpg" alt="item"></div>
+									<img src="img/category/2.jpg" alt="item">
 								</div>
 								<div class="swiper-slide">
-									<div class=""><img src="img/category/3.jpg" alt="item"></div>
+									<img src="img/category/3.jpg" alt="item">
 								</div>
 							</div>
 							<div class="swiper-button-next"></div>
@@ -316,19 +315,26 @@
 
 			<div id="documentation-three" class="card__documentation_wrap">
 				<div class="container">
+					<div class="card__documentation_content">
+						<h6>Далеко-далеко за словесными.</h6>
+						<p>Кубическая форма подчеркивается декоративной прошивкой. Не сомневайтесь по поводу комфорта прямых линий дивана – присев на него, вы поймете, что это диван мечты. Несмотря на компактный размер, этот двухместный диван выглядит стильно и идеально подойдет для небольшой комнаты.</p>
+					</div>
 					<div class="card__documentation_row">
-						<div class="card__documentation_block">
+						<a href="#" class="card__documentation_block">
 							<img src="img/slider/cloth-1.jpg" alt="ткань">
+							<h6>Далеко-далеко за словесными.</h6>
 							<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Журчит даже это что повстречался.</p>
-						</div>
-						<div class="card__documentation_block">
+						</a>
+						<a href="#" class="card__documentation_block">
 							<img src="img/slider/cloth-2.jpg" alt="ткань">
+							<h6>Далеко-далеко за словесными.</h6>
 							<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Коварных жизни даль подзаголовок свое!</p>
-						</div>
-						<div class="card__documentation_block">
+						</a>
+						<a href="#" class="card__documentation_block">
 							<img src="img/slider/cloth-3.jpg" alt="ткань">
+							<h6>Далеко-далеко за словесными.</h6>
 							<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Залетают меня переписали свой. Он.</p>
-						</div>
+						</a>
 					</div>
 					<a href="#" class="btn">Смотреть все ткани</a>
 				</div>
@@ -614,6 +620,52 @@
 
 	<script src="js/scripts.min.js"></script>
 	<script>
+
+var swiperlist = new Swiper('.reviews__list', {
+  slidesPerView: 3,
+  spaceBetween: 30,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 1,
+      spaceBetween: 20
+    },
+    992: {
+      slidesPerView: 2,
+      spaceBetween: 30
+    }
+  }
+});
+
+
+var swiperslider = new Swiper('.page-slider', {
+  slidesPerView: 1,
+  spaceBetween: 30,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+});
+
+var swiperslider = new Swiper('.card__documentation_box', {
+  slidesPerView: 1,
+  spaceBetween: 30,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+});
 		var swiper1 = new Swiper('#one', {
 		  slidesPerView: 1,
 		  spaceBetween: 30,

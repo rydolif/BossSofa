@@ -27,9 +27,6 @@
 		max-width: 1116px
 		margin: 0 auto
 
-	.crumb__container
-		max-width: 1116px
-		margin: 0 auto
 		
 //------------------------------------------------------------------------
 @media only screen and (min-width : 1920px)
@@ -97,7 +94,7 @@
 				flex-direction: column
 				justify-content: center
 				align-items: center
-				margin-top: 60px
+				padding-top: 50px
 
 			li
 				margin: 0
@@ -147,7 +144,7 @@
 		.hamburger
 			display: block
 			z-index: 1001
-			right: 15px
+			right: 0
 
 		.hamburger-box
 			right: 0
@@ -156,7 +153,7 @@
 			right: 0px
 
 	.section
-		padding: 50px 0
+		padding: 0 0 30px 0
 
 	.articles
 		padding-top: 0
@@ -280,13 +277,13 @@
 
 			&_block
 				width: 48%
-				margin-bottom: 20px
+				margin-bottom: 10px
 
 				&:nth-child(n+3)
 					margin-bottom: 0
 
 			strong
-				margin-bottom: 30px
+				margin-bottom: 10px
 
 		&__documentation
 			&_wrap
@@ -448,8 +445,7 @@
 			width: 80%
 			&_link
 				height: auto
-				max-height: 100%
-				min-height: 220px
+				max-height: 220px
 
 		&__banner
 			padding: 30px 15px
@@ -457,10 +453,10 @@
 	.card
 		&__more
 			strong
-				margin-bottom: 15px
-
+				margin-bottom: 5px
 			p
-				margin-bottom: 15px
+				margin-bottom: 5px
+
 		&__documentation
 			&_tab
 				ul
@@ -474,23 +470,21 @@
 
 @media only screen and (max-width : 480px)
 	.logo
-		width: 160px
-		height: 45px
+		width: 110px
+		height: 30px
 		img
-			width: 160px
-			height: 45px
-	
-	.main
-		padding-top: 150px
+			width: 110px
+			height: 30px
+
 	.header
 		nav
-			top: 55px
+			top: 40px
 
 			ul
-				margin-top: 100px
+				margin-top: 0
 
 		&__container
-			padding-right: 60px
+			padding-right: 40px
 
 		.search
 			width: 100px
@@ -507,6 +501,7 @@
 				margin-bottom: 0
 
 	.crumb
+		top: 40px
 		ul
 			flex-wrap: wrap
 
@@ -518,7 +513,7 @@
 			&_block
 				width: 100%
 				&:nth-child(n+3)
-					margin-bottom: 20px
+					margin-bottom: 10px
 
 				&:last-child
 					margin-bottom: 0
@@ -532,11 +527,6 @@
 			&_block
 				width: 100%
 
-			&_box
-				img
-					max-width: 300px
-		.tabs__wrap_item
-			padding: 30px 40px 0 40px
 
 		.swiper-button-next
 			right: 10px
@@ -551,3 +541,9 @@
 				width: 100%
 				&:nth-child(even)
 					width: 100%
+
+	.footer__block div ul
+		column-count: 1
+
+	.reviews__item
+		padding: 10px

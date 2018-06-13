@@ -11,6 +11,12 @@
 	padding: 5px 0
 	transition: all .3s
 
+	&__active
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+
 	&__container
 		position: relative
 		display: flex
@@ -33,9 +39,6 @@
 	label
 		margin-right: 10px
 
-.main
-	padding-top: 120px
-
 .section
 	background-color: #fff
 	padding: 40px 0
@@ -46,6 +49,9 @@
 .logo
 	width: 240px
 	height: 65px
+	img
+		width: 240px
+		height: 60px
 
 .category
 	&__list
@@ -440,7 +446,7 @@
 		flex-direction: row
 		justify-content: space-between
 		align-items: center
-		padding: 0 12px
+		flex-wrap: wrap
 
 	b
 		font-weight: 400
@@ -573,7 +579,6 @@
 			display: flex
 			flex-direction: row
 			justify-content: space-between
-			padding: 0 12px
 
 		&__list
 			display: flex
@@ -748,15 +753,16 @@
 			margin-bottom: 5px
 
 		p
-			margin-bottom: 20px
+			margin-bottom: 5px
 
 		strong
 			color: $red
 			font-size: 18px
-			margin-bottom: 30px
+			margin-bottom: 5px
 
 		img
 			width: 100%
+			max-height: 170px
 
 		&_block
 			width: 23%
@@ -764,8 +770,6 @@
 				display: flex
 				flex-direction: column
 				background-color: #fff
-				padding: 25px
-				border: 1px solid #f2f2f2
 				text-decoration: none
 				color: $accent
 
@@ -778,6 +782,14 @@
 					width: 100%
 		
 	&__documentation
+		h6
+			margin-bottom: 5px
+
+		&_content
+			margin-bottom: 20px
+			h6
+				margin-bottom: 5px
+
 		&_tab
 			display: flex
 			flex-direction: row
@@ -853,9 +865,17 @@
 		
 		&_block
 			width: 32%
+			color: $accent
+			&:hover
+				text-decoration: none
+				color: $accent
+			&:focus
+				text-decoration: none
+				color: $accent
 			img
 				width: 100%
 				height: 200px
+				margin-bottom: 10px
 		
 		&_info
 			width: 50%
@@ -865,8 +885,8 @@
 			text-align: center
 
 			img
-				max-width: 400px
-				height: auto
+				width: 100%
+				max-height: 350px
 
 	&__scheme
 		&_container
@@ -963,18 +983,21 @@
 
 	.tabs__wrap
 		position: relative
-		padding-bottom: 50px
-		border: 1px solid #e6e6e6
-		height: 100%
+		display: flex
+		align-items: center
 
 		&_item
-			width: 100%
-			padding: 50px 90px 0 90px
+			width: auto
+			height: auto
+			max-height: 500px
 			display: flex
-			align-items: center
+			flex-direction: column
+			padding-bottom: 30px
 
 			img
 				width: 100%
+				height: auto
+				margin: 0 auto
 
 //---------------------------------shops-------------------------------
 .shops

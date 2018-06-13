@@ -11,14 +11,13 @@ $red: #f2634b
 
 //---------------------end-color---------------------
 
-
 html, body
 	height: 100%
 
 body
 	overflow-x: hidden
 	position: relative
-	min-width: 400px
+	min-width: 320px
 	line-height: 1.65
 	font-family: $fonts
 	font-size: 13px
@@ -464,6 +463,9 @@ iframe
 		width: 30px
 		right: 0
 
+	.hamburger-inner
+		margin-top: 0
+
 	.hamburger-inner,
 	.hamburger-inner:after,
 	.hamburger-inner:before
@@ -472,11 +474,21 @@ iframe
 		height: 3px
 		right: 0
 
+	.hamburger-inner:before
+		top: -8px
+
+	.hamburger-inner:after
+		bottom: -8px
 
 	.is-active
 		position: fixed
 		z-index: 1001
 
+.is-active
+	.hamburger-inner:before
+		top: -10px
+	.hamburger-inner:after
+		bottom: -10px
 
 //-----------------------------------------------------slider-swiper------------------------------------
 .swiper-pagination
